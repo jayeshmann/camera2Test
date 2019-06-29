@@ -242,16 +242,17 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
         List<Size> bigEnough = new ArrayList<>();
         int w = aspectRatio.getWidth();
         int h = aspectRatio.getHeight();
-        Log.d(TAG,"\nchooseOptimalSize(): h:" + h);
-        Log.d(TAG,"\nchooseOptimalSize(): w:" + w);
+        Log.d(TAG, "\nchooseOptimalSize(): w: " + w);
+        Log.d(TAG, "\nchooseOptimalSize(): h: " + h);
+
         for (Size option : choices) {
-            Log.d(TAG,"\nchooseOptimalSize(): option:" + option);
+            Log.d(TAG, "\nchooseOptimalSize(): option: " + option);
             if (option.getHeight() == option.getWidth() * h / w &&
                     option.getWidth() >= width && option.getHeight() >= height) {
                 bigEnough.add(option);
             }
         }
-        Log.d(TAG,"chooseOptimalSize():" + bigEnough.size());
+        Log.d(TAG, "chooseOptimalSize(): bigEnough.size(): " + bigEnough.size());
 
         // Pick the smallest of those, assuming we found any
         if (bigEnough.size() > 0) {
@@ -286,6 +287,7 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
                 }
             }
         });
+
 
     }
     @Override
